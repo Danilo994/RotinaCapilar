@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ycJRsbcOzJU=",
+  "dgSpecHash": "rBOuXWmvmAU=",
   "success": true,
   "projectFilePath": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DANILOARRABALDOCARMO\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.6\\microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512",
-    "C:\\Users\\DANILOARRABALDOCARMO\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+    "C:\\Users\\DANILOARRABALDOCARMO\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\DANILOARRABALDOCARMO\\.nuget\\packages\\scalar.aspnetcore\\2.5.3\\scalar.aspnetcore.2.5.3.nupkg.sha512"
   ],
   "logs": []
 }

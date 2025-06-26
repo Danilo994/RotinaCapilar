@@ -32,3 +32,4 @@ D:\Git\CuidadosCapilar\APICuidadosCapilar\APICuidadosCapilar\obj\Debug\net9.0\re
 D:\Git\CuidadosCapilar\APICuidadosCapilar\APICuidadosCapilar\obj\Debug\net9.0\APICuidadosCapilar.pdb
 D:\Git\CuidadosCapilar\APICuidadosCapilar\APICuidadosCapilar\obj\Debug\net9.0\APICuidadosCapilar.genruntimeconfig.cache
 D:\Git\CuidadosCapilar\APICuidadosCapilar\APICuidadosCapilar\obj\Debug\net9.0\ref\APICuidadosCapilar.dll
+D:\Git\CuidadosCapilar\APICuidadosCapilar\APICuidadosCapilar\bin\Debug\net9.0\Scalar.AspNetCore.dll
