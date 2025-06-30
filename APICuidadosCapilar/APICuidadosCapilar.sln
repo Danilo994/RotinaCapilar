@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36203.30 d17.14
+VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICuidadosCapilar", "APICuidadosCapilar\APICuidadosCapilar.csproj", "{0E854CBB-F134-44A7-A67F-94C20F335461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models.CuidadosCapilar", "Models.CuidadosCapilar\Models.CuidadosCapilar.csproj", "{97FC83E1-18E8-430E-852D-F3DACD55DD1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0E854CBB-F134-44A7-A67F-94C20F335461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E854CBB-F134-44A7-A67F-94C20F335461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E854CBB-F134-44A7-A67F-94C20F335461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97FC83E1-18E8-430E-852D-F3DACD55DD1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FC83E1-18E8-430E-852D-F3DACD55DD1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FC83E1-18E8-430E-852D-F3DACD55DD1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FC83E1-18E8-430E-852D-F3DACD55DD1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,15 @@
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\bin\Debug\net9.0\Models.CuidadosCapilar.deps.json
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\bin\Debug\net9.0\Models.CuidadosCapilar.runtimeconfig.json
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\bin\Debug\net9.0\Models.CuidadosCapilar.dll
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\bin\Debug\net9.0\Models.CuidadosCapilar.pdb
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.csproj.AssemblyReference.cache
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.AssemblyInfoInputs.cache
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.AssemblyInfo.cs
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.csproj.CoreCompileInputs.cache
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.sourcelink.json
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.dll
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\refint\Models.CuidadosCapilar.dll
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.pdb
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\Models.CuidadosCapilar.genruntimeconfig.cache
+D:\Git\CuidadosCapilar\APICuidadosCapilar\Models.CuidadosCapilar\obj\Debug\net9.0\ref\Models.CuidadosCapilar.dll
