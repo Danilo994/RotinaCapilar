@@ -5,6 +5,8 @@ using Models.CuidadosCapilar.Model;
 
 namespace APICuidadosCapilar.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class FotoController : ControllerBase
     {
         RepositoryFoto _repositoryFoto;
@@ -12,7 +14,7 @@ namespace APICuidadosCapilar.Controllers
 
         public FotoController(DBRotinaCapilarContext context)
         {
-            _repositoryFoto = new RepositoryFoto();
+            _repositoryFoto = new RepositoryFoto(context);
             _context = context;
         }
 

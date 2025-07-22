@@ -4,7 +4,7 @@ namespace APICuidadosCapilar.Repositories
 {
     public class RepositoryLavagem : RepositoryBase<Lavagem>
     {
-        public RepositoryLavagem(bool saveChanges = true) : base(saveChanges) 
+        public RepositoryLavagem(DBRotinaCapilarContext context) : base(context)
         {
 
         }

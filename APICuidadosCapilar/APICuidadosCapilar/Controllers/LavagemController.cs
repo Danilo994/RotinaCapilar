@@ -4,6 +4,8 @@ using Models.CuidadosCapilar.Model;
 
 namespace APICuidadosCapilar.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class LavagemController : ControllerBase
     {
         RepositoryLavagem _repositoryLavagem;
@@ -11,7 +13,7 @@ namespace APICuidadosCapilar.Controllers
 
         public LavagemController(DBRotinaCapilarContext context)
         {
-            _repositoryLavagem = new RepositoryLavagem();
+            _repositoryLavagem = new RepositoryLavagem(context);
             _context = context;
         }
 

@@ -4,6 +4,8 @@ using Models.CuidadosCapilar.Model;
 
 namespace APICuidadosCapilar.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class ProdutosController : ControllerBase
     {
         RepositoryProduto _repositoryProduto;
@@ -11,7 +13,7 @@ namespace APICuidadosCapilar.Controllers
 
         public ProdutosController(DBRotinaCapilarContext context)
         {
-            _repositoryProduto = new RepositoryProduto();
+            _repositoryProduto = new RepositoryProduto(context);
             _context = context;
         }
 
@@ -24,9 +26,9 @@ namespace APICuidadosCapilar.Controllers
                 var produtos = await _repositoryProduto.SelecionarTodosAsync();
                 return Ok(produtos);
             }
-            catch
+            catch (Exception ex)
             {
-                return BadRequest("Erro ao retornar lista de produtos");
+                return BadRequest($"Erro ao retornar lista de produtos: {ex.Message}");
             }
         }
 

@@ -9,9 +9,9 @@ namespace APICuidadosCapilar.Repositories
         public DBRotinaCapilarContext _context;
         public bool _saveChanges = true;
 
-        public RepositoryBase(bool _saveChanges = true)
+        public RepositoryBase(DBRotinaCapilarContext context, bool _saveChanges = true)
         {
-            _context = new DBRotinaCapilarContext();
+            _context = context;
             _saveChanges = _saveChanges;
         }
         public void Dispose()

@@ -5,6 +5,8 @@ using Models.CuidadosCapilar.Model;
 
 namespace APICuidadosCapilar.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class AvaliacaoController : ControllerBase
     {
         RepositoryAvaliacao _repositoryAvaliacao;
@@ -12,7 +14,7 @@ namespace APICuidadosCapilar.Controllers
 
         public AvaliacaoController(DBRotinaCapilarContext context)
         {
-            _repositoryAvaliacao = new RepositoryAvaliacao();
+            _repositoryAvaliacao = new RepositoryAvaliacao(context);
             _context = context;
         }
 

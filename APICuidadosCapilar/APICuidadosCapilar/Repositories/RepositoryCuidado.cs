@@ -4,7 +4,7 @@ namespace APICuidadosCapilar.Repositories
 {
     public class RepositoryCuidado : RepositoryBase<Cuidado>
     {
-        public RepositoryCuidado(bool saveChanges = true) : base(saveChanges) 
+        public RepositoryCuidado(DBRotinaCapilarContext context) : base(context) 
         { 
             
         }

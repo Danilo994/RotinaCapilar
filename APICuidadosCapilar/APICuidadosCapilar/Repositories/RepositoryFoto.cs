@@ -4,7 +4,7 @@ namespace APICuidadosCapilar.Repositories
 {
     public class RepositoryFoto : RepositoryBase<Foto>
     {
-        public RepositoryFoto(bool saveChanges = true) : base(saveChanges) 
+        public RepositoryFoto(DBRotinaCapilarContext context) : base(context)
         {
 
         }
