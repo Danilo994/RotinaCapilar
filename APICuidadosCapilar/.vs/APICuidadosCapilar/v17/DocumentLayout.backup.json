@@ -74,8 +74,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\Program.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T22:54:58.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T22:54:58.787Z"
             },
             {
               "$type": "Document",
@@ -83,9 +82,9 @@
               "Title": "ProdutosController.cs",
               "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Controllers\\ProdutosController.cs",
               "RelativeDocumentMoniker": "APICuidadosCapilar\\Controllers\\ProdutosController.cs",
-              "ToolTip": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Controllers\\ProdutosController.cs*",
-              "RelativeToolTip": "APICuidadosCapilar\\Controllers\\ProdutosController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Controllers\\ProdutosController.cs",
+              "RelativeToolTip": "APICuidadosCapilar\\Controllers\\ProdutosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T12:52:17.868Z",
               "EditorCaption": ""
@@ -100,8 +99,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-22T23:09:55.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:09:55.809Z"
             },
             {
               "$type": "Document",
@@ -113,21 +111,19 @@
               "RelativeToolTip": "APICuidadosCapilar\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-22T22:46:31.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T22:46:31.937Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "APICuidadosCapilar",
+              "Title": "APICuidadosCapilar.csproj",
               "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar.csproj",
               "RelativeDocumentMoniker": "APICuidadosCapilar\\APICuidadosCapilar.csproj",
               "ToolTip": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar.csproj",
               "RelativeToolTip": "APICuidadosCapilar\\APICuidadosCapilar.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-22T23:27:02.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:27:02.823Z"
             },
             {
               "$type": "Document",
@@ -139,8 +135,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\Repositories\\RepositoryCuidado.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T23:18:34.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:18:34.787Z"
             },
             {
               "$type": "Document",
@@ -152,8 +147,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\Repositories\\RepositoryAvaliacao.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T23:18:41.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:18:41.345Z"
             },
             {
               "$type": "Document",
@@ -165,8 +159,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\Repositories\\RepositoryCuidadoProduto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T23:18:30.167Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:18:30.167Z"
             },
             {
               "$type": "Document",
@@ -178,8 +171,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\Repositories\\RepositoryFoto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T23:18:23.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:18:23.468Z"
             },
             {
               "$type": "Document",
@@ -191,8 +183,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\Repositories\\RepositoryLavagem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T23:18:19.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:18:19.898Z"
             },
             {
               "$type": "Document",
@@ -204,8 +195,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\Repositories\\RepositoryProduto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T23:17:01.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:17:01.778Z"
             },
             {
               "$type": "Document",
@@ -217,8 +207,7 @@
               "RelativeToolTip": "APICuidadosCapilar\\Repositories\\RepositoryBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T23:14:38.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T23:14:38.363Z"
             },
             {
               "$type": "Document",
@@ -230,8 +219,7 @@
               "RelativeToolTip": "Models.CuidadosCapilar\\Model\\Cuidado.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T16:04:07.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T16:04:07.691Z"
             }
           ]
         }
