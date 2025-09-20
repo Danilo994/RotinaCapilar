@@ -1,15 +1,23 @@
-# Rotina Capilar API
+# Rotina Capilar - API + Frontend
 
-Uma API REST criada com **ASP.NET Core (.NET 9)** para registrar e acompanhar rotinas de cuidados capilares. O objetivo é permitir que o usuário salve os produtos utilizados, tipos de lavagem realizados, avaliações e até fotos do resultado.
+Uma aplicação completa para registrar e acompanhar rotinas de cuidados capilares.  
+O projeto é dividido em **back-end (API)** e **front-end (React)**.
 
 ---
 
 ## Tecnologias Utilizadas
 
+### Back-end
 - ASP.NET Core Web API (.NET 9)
 - Entity Framework Core (EF Core)
 - SQL Server
 - Visual Studio 2022+
+
+### Front-end
+- React + Vite
+- Axios (requisições HTTP)
+- React Router DOM (navegação entre páginas)
+- Node.js 18+ (para rodar o front)
 
 ---
 
