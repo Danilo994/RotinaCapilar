@@ -1,6 +1,7 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import Produtos from "./pages/Produtos";
 import Lavagem from "./pages/Lavagem";
+import Cuidado from './pages/Cuidado';
 
 function Home(){
   return(
@@ -21,7 +22,7 @@ function App() {
       <Route path='/' element={<Home />}></Route>
       <Route path='/produtos' element={<Produtos />}></Route>
       <Route path='/lavagem' element={<Lavagem />}></Route>
-      <Route path='/cuidados'element={<h2>Pagina de Cuidados</h2>}></Route>
+      <Route path='/cuidados'element={<Cuidado />}></Route>
     </Routes>
   );
 }
