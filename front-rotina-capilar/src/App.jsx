@@ -1,7 +1,8 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import Produtos from "./pages/Produtos";
-import Lavagem from "./pages/Lavagem";
-import Cuidado from './pages/Cuidado';
+import Lavagens from "./pages/Lavagens";
+import Cuidados from './pages/Cuidados';
+import Avaliacoes from './pages/Avaliacoes';
 
 function Home(){
   return(
@@ -9,8 +10,9 @@ function Home(){
       <h1>Rotina Capilar</h1>
       <nav>
         <Link to="/produtos"><button>Produtos</button></Link>
-        <Link to="/lavagem"><button>Lavagens</button></Link>
+        <Link to="/lavagens"><button>Lavagens</button></Link>
         <Link to="/cuidados"><button>Cuidados</button></Link>
+        <Link to="/avaliacoes"><button>Avaliações</button></Link>
       </nav>
     </div>
   );
@@ -21,8 +23,9 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />}></Route>
       <Route path='/produtos' element={<Produtos />}></Route>
-      <Route path='/lavagem' element={<Lavagem />}></Route>
-      <Route path='/cuidados'element={<Cuidado />}></Route>
+      <Route path='/lavagens' element={<Lavagens />}></Route>
+      <Route path='/cuidados'element={<Cuidados />}></Route>
+      <Route path='/avaliacoes'element={<Avaliacoes />}></Route>
     </Routes>
   );
 }

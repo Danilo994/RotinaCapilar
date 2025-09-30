@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 
-function Lavagem(){
+function Lavagens(){
     const [lavagens, setLavagens] = useState([]);
     const [lavagemSelecionada, setLavagemSelecionada] = useState(null);
     const [form, setForm] = useState({nomeLavagem: ""});
@@ -11,7 +11,7 @@ function Lavagem(){
     }, []);
 
     async function carregaLavagens(){
-        const response = await api.get("/lavagem");
+        const response = await api.get("/lavagens");
         setLavagens(response.data);
     }
 
@@ -21,9 +21,9 @@ function Lavagem(){
 
     async function handleSalvar() {
         if(lavagemSelecionada){
-            await api.put("/lavagem",  { ...form, idLavagem: lavagemSelecionada.idLavagem});
+            await api.put("/lavagens",  { ...form, idLavagem: lavagemSelecionada.idLavagem});
         } else{
-            await api.post("/lavagem", form);
+            await api.post("/lavagens", form);
         }
         setForm({nomeLavagem: ""});
         setLavagemSelecionada(null);
@@ -37,7 +37,7 @@ function Lavagem(){
 
     async function handleExcluir(id) {
         if(!window.confirm("Deseja excluir esta lavagem?")) return;
-        await api.delete(`/lavagem/${id}`);
+        await api.delete(`/lavagens/${id}`);
     }
 
     return (
@@ -77,15 +77,15 @@ function Lavagem(){
               <td colSpan="4">Nenhuma lavagem encontrado</td>
             </tr>
           ) : (
-            lavagens.map((p) => (
-              <tr key={p.idLavagem}>
-                <td>{p.idLavagem}</td>
-                <td>{p.nomeLavagem}</td>
+            lavagens.map((l) => (
+              <tr key={l.idLavagem}>
+                <td>{l.idLavagem}</td>
+                <td>{l.nomeLavagem}</td>
                 <td>
-                  <button onClick={() => handleEditar(p)}>Editar</button>
+                  <button onClick={() => handleEditar(l)}>Editar</button>
                 </td>
                 <td>
-                  <button onClick={() => handleExcluir(p.idProduto)}>Excluir</button>
+                  <button onClick={() => handleExcluir(l.idProduto)}>Excluir</button>
                 </td>
               </tr>
             ))
@@ -96,4 +96,4 @@ function Lavagem(){
     );
 }
 
-export default Lavagem;
+export default Lavagens;

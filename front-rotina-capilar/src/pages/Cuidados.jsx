@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 
-function Cuidado(){
+function Cuidados(){
     const [cuidados, setCuidados] = useState([]);
     const [cuidadoSelecionado, setCuidadoSelecionado] = useState(null);
     const [form, setForm] = useState({idCuidado: "0", dataCuidado: "", idLavagem: "0"});
@@ -86,6 +86,7 @@ function Cuidado(){
           ) : (
             cuidados.map((c) => (
               <tr key={c.idCuidado}>
+                <td>{c.idCuidado}</td>
                 <td>{new Date(carregaCuidados.dataCuidado).toLocaleString()}</td>
                 <td>{carregaCuidados.idLavagem}</td>
                 <td>
@@ -103,4 +104,4 @@ function Cuidado(){
     );
 }
 
-export default Cuidado;
+export default Cuidados;
