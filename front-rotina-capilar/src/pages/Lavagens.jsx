@@ -11,7 +11,7 @@ function Lavagens(){
     }, []);
 
     async function carregaLavagens(){
-        const response = await api.get("/lavagens");
+        const response = await api.get("/Lavagem");
         setLavagens(response.data);
     }
 
@@ -21,9 +21,9 @@ function Lavagens(){
 
     async function handleSalvar() {
         if(lavagemSelecionada){
-            await api.put("/lavagens",  { ...form, idLavagem: lavagemSelecionada.idLavagem});
+            await api.put("/Lavagem",  { ...form, idLavagem: lavagemSelecionada.idLavagem});
         } else{
-            await api.post("/lavagens", form);
+            await api.post("/Lavagem", form);
         }
         setForm({nomeLavagem: ""});
         setLavagemSelecionada(null);
@@ -37,7 +37,7 @@ function Lavagens(){
 
     async function handleExcluir(id) {
         if(!window.confirm("Deseja excluir esta lavagem?")) return;
-        await api.delete(`/lavagens/${id}`);
+        await api.delete(`/Lavagem/${id}`);
     }
 
     return (

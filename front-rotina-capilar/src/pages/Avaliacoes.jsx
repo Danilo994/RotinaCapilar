@@ -11,7 +11,7 @@ function Avaliacoes(){
     }, []);
 
     async function carregaAvaliacoes(){
-        const response = await api.get("/avaliacoes");
+        const response = await api.get("/Avaliacao");
         setAvaliacoes(response.data);
     }
 
@@ -21,9 +21,9 @@ function Avaliacoes(){
 
     async function handleSalvar() {
         if(avaliacaoSelecionada){
-            await api.put("/avaliacoes", form)
+            await api.put("/Avaliacao", form)
         } else{
-            await api.post("/avaliacoes", form);
+            await api.post("/Avaliacao", form);
         }
         setForm({idAvaliacao: 0, nota: "", observacao: "", dataAvaliacao: "", idCuidado: 0});
         setAvaliacaoSelecionada(null);
@@ -37,7 +37,7 @@ function Avaliacoes(){
 
     async function handleExcluir(id) {
         if(!window.confirm("Deseja excluir esta avaliação?")) return;
-        await api.delete(`/avaliacoes/${id}`);
+        await api.delete(`/Avaliacao/${id}`);
     }
 
     return (

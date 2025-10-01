@@ -3,27 +3,34 @@ import api from "../services/api";
 
 function Cuidados(){
     const [cuidados, setCuidados] = useState([]);
+    const [lavagens, setLavagens] = useState([]);
     const [cuidadoSelecionado, setCuidadoSelecionado] = useState(null);
     const [form, setForm] = useState({idCuidado: "0", dataCuidado: "", idLavagem: "0"});
 
     useEffect(() => {
         carregaCuidados();
+        carregaLavagens();
     }, []);
 
     async function carregaCuidados(){
-        const response = await api.get("/cuidados");
+        const response = await api.get("/Cuidado");
         setCuidados(response.data);
     }
 
+    async function carregaLavagens() {
+      const response = await api.get("/Lavagem");
+      setLavagens(response.data);
+    }
+
     function handleChange(e){
-        setForm({ ...form, [e.target.name]: e.target.name});
+        setForm({ ...form, [e.target.name]: e.target.value});
     }
 
     async function handleSalvar() {
         if(cuidadoSelecionado){
-            await api.put("/cuidados", form)
+            await api.put("/Cuidado", form)
         } else{
-            await api.post("/cuidados", form);
+            await api.post("/Cuidado", form);
         }
         setForm({idCuidado: 0, dataCuidado: "", idLavagem: 0});
         setCuidadoSelecionado(null);
@@ -37,7 +44,7 @@ function Cuidados(){
 
     async function handleExcluir(id) {
         if(!window.confirm("Deseja excluir este cuidado?")) return;
-        await api.delete(`/cuidados/${id}`);
+        await api.delete(`/Cuidado/${id}`);
     }
 
     return (
@@ -51,13 +58,18 @@ function Cuidados(){
           value={form.dataCuidado}
           onChange={handleChange}
         />
-        <input 
-            type="number"
+        <select 
             name="idLavagem"
             value={form.idLavagem}
             onChange={handleChange}
-            placeholder="Lavagem" 
-        />
+        >
+          <option value="">Selecione uma lavagem</option>
+          {lavagens.map((lav) => (
+            <option key={lav.idLavagem} value={lav.idLavagem}>
+              {lav.nomeLavagem}
+            </option>
+          ))}
+        </select>
         <button onClick={handleSalvar}>
           {cuidadoSelecionado ? "Salvar Edição" : "Adicionar"}
         </button>

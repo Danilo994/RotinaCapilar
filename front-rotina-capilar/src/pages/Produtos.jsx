@@ -11,7 +11,7 @@ function Produtos(){
     }, []);
 
     async function carregaProdutos(){
-        const response = await api.get("/produtos");
+        const response = await api.get("/Produtos");
         setProdutos(response.data);
     }
 
@@ -21,9 +21,9 @@ function Produtos(){
 
     async function handleSalvar() {
         if(produtoSelecionado){
-            await api.put("/produtos",  { ...form, idProduto: produtoSelecionado.idProduto});
+            await api.put("/Produtos",  { ...form, idProduto: produtoSelecionado.idProduto});
         } else{
-            await api.post("/produtos", form);
+            await api.post("/Produtos", form);
         }
         setForm({nomeProduto: ""});
         setProdutoSelecionado(null);
@@ -37,7 +37,7 @@ function Produtos(){
 
     async function handleExcluir(id) {
         if(!window.confirm("Deseja excluir este produto?")) return;
-        await api.delete(`/produtos/${id}`);
+        await api.delete(`/Produtos/${id}`);
     }
 
     return (
