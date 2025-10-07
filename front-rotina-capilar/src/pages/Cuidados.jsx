@@ -4,12 +4,15 @@ import api from "../services/api";
 function Cuidados(){
     const [cuidados, setCuidados] = useState([]);
     const [lavagens, setLavagens] = useState([]);
+    const [produtos, setProdutos] = useState([]);
     const [cuidadoSelecionado, setCuidadoSelecionado] = useState(null);
+    const [produtosSelecionados, setProdutosSelecionados] = useState([]);
     const [form, setForm] = useState({idCuidado: "0", dataCuidado: "", idLavagem: "0"});
 
     useEffect(() => {
         carregaCuidados();
         carregaLavagens();
+        carregaProdutos();
     }, []);
 
     async function carregaCuidados(){
@@ -22,18 +25,41 @@ function Cuidados(){
       setLavagens(response.data);
     }
 
+    async function carregaProdutos() {
+      const response = await api.get("/Produtos");
+      setProdutos(response.data);
+    }
+
     function handleChange(e){
         setForm({ ...form, [e.target.name]: e.target.value});
     }
 
     async function handleSalvar() {
+      let idCuidado;
+      
         if(cuidadoSelecionado){
-            await api.put("/Cuidado", form)
+            await api.put("/Cuidado", form);
+            idCuidado = form.idCuidado;
         } else{
-            await api.post("/Cuidado", form);
+            const response = await api.post("/Cuidado", form);
+            idCuidado = response.data.idCuidado;
         }
+
+        if(produtosSelecionados.length > 0){
+          if(cuidadoSelecionado){
+            await api.delete(`/CuidadoProduto/cuidado/${idCuidado}`)
+          }
+          for(const idProduto of produtosSelecionados){
+            await api.post("/CuidadoProduto", {
+              idCuidado,
+              idProduto: parseInt(idProduto)
+            });
+          }
+        }
+
         setForm({idCuidado: 0, dataCuidado: "", idLavagem: 0});
         setCuidadoSelecionado(null);
+        setProdutosSelecionados([]);
         carregaCuidados();
     }
 
@@ -67,6 +93,23 @@ function Cuidados(){
           {lavagens.map((lav) => (
             <option key={lav.idLavagem} value={lav.idLavagem}>
               {lav.nomeLavagem}
+            </option>
+          ))}
+        </select>
+        <label>Produtos usados:</label>
+        <select
+          multiple
+          name="produtos"
+          value={produtosSelecionados}
+          onChange={(e) => {
+            const valores = Array.from(e.target.selectedOptions, (opt) => opt.value);
+            setProdutosSelecionados(valores);
+          }}
+          style={{width: "100%", height: "120px"}}
+        >
+          {produtos.map((p) => (
+            <option key={p.idProduto} value={p.idProduto}>
+              {p.nomeProduto}
             </option>
           ))}
         </select>

@@ -22,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -47,8 +51,7 @@
               "RelativeToolTip": "Models.CuidadosCapilar\\Model\\Lavagem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T12:53:33.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T12:53:33.908Z"
             },
             {
               "$type": "Document",
@@ -60,8 +63,7 @@
               "RelativeToolTip": "Models.CuidadosCapilar\\Model\\Produto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T12:46:44.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T12:46:44.984Z"
             }
           ]
         }
