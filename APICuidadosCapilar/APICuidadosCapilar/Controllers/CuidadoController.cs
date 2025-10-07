@@ -56,7 +56,7 @@ namespace APICuidadosCapilar.Controllers
                 cuidado.DataCriacao = DateTime.Now;
                 cuidado.DataModificacao = DateTime.Now;
                 await _repositoryCuidado.IncluirAsync(cuidado);
-                return Ok("Cuidado adicionado");
+                return Ok(cuidado);
             }
             catch
             {
@@ -72,7 +72,7 @@ namespace APICuidadosCapilar.Controllers
             {
                 cuidado.DataModificacao = DateTime.Now;
                 await _repositoryCuidado.AlterarAsync(cuidado);
-                return Ok("Cuidado editado");
+                return Ok(cuidado);
             }
             catch
             {
