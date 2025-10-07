@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0E854CBB-F134-44A7-A67F-94C20F335461}|APICuidadosCapilar\\APICuidadosCapilar.csproj|d:\\git\\cuidadoscapilar\\apicuidadoscapilar\\apicuidadoscapilar\\controllers\\cuidadoprodutocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E854CBB-F134-44A7-A67F-94C20F335461}|APICuidadosCapilar\\APICuidadosCapilar.csproj|solutionrelative:apicuidadoscapilar\\controllers\\cuidadoprodutocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E854CBB-F134-44A7-A67F-94C20F335461}|APICuidadosCapilar\\APICuidadosCapilar.csproj|d:\\git\\cuidadoscapilar\\apicuidadoscapilar\\apicuidadoscapilar\\interfaces\\irepositorycuidadoproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E854CBB-F134-44A7-A67F-94C20F335461}|APICuidadosCapilar\\APICuidadosCapilar.csproj|solutionrelative:apicuidadoscapilar\\interfaces\\irepositorycuidadoproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E854CBB-F134-44A7-A67F-94C20F335461}|APICuidadosCapilar\\APICuidadosCapilar.csproj|d:\\git\\cuidadoscapilar\\apicuidadoscapilar\\apicuidadoscapilar\\repositories\\repositorycuidadoproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E854CBB-F134-44A7-A67F-94C20F335461}|APICuidadosCapilar\\APICuidadosCapilar.csproj|solutionrelative:apicuidadoscapilar\\repositories\\repositorycuidadoproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0E854CBB-F134-44A7-A67F-94C20F335461}|APICuidadosCapilar\\APICuidadosCapilar.csproj|d:\\git\\cuidadoscapilar\\apicuidadoscapilar\\apicuidadoscapilar\\controllers\\cuidadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E854CBB-F134-44A7-A67F-94C20F335461}|APICuidadosCapilar\\APICuidadosCapilar.csproj|solutionrelative:apicuidadoscapilar\\controllers\\cuidadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,28 +38,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepositoryCuidadoProduto.cs",
+              "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Interfaces\\IRepositoryCuidadoProduto.cs",
+              "RelativeDocumentMoniker": "APICuidadosCapilar\\Interfaces\\IRepositoryCuidadoProduto.cs",
+              "ToolTip": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Interfaces\\IRepositoryCuidadoProduto.cs",
+              "RelativeToolTip": "APICuidadosCapilar\\Interfaces\\IRepositoryCuidadoProduto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T12:37:37.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RepositoryCuidadoProduto.cs",
+              "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Repositories\\RepositoryCuidadoProduto.cs",
+              "RelativeDocumentMoniker": "APICuidadosCapilar\\Repositories\\RepositoryCuidadoProduto.cs",
+              "ToolTip": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Repositories\\RepositoryCuidadoProduto.cs",
+              "RelativeToolTip": "APICuidadosCapilar\\Repositories\\RepositoryCuidadoProduto.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T12:38:51.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CuidadoProdutoController.cs",
+              "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Controllers\\CuidadoProdutoController.cs",
+              "RelativeDocumentMoniker": "APICuidadosCapilar\\Controllers\\CuidadoProdutoController.cs",
+              "ToolTip": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Controllers\\CuidadoProdutoController.cs",
+              "RelativeToolTip": "APICuidadosCapilar\\Controllers\\CuidadoProdutoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T12:37:16.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CuidadoController.cs",
               "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Controllers\\CuidadoController.cs",
               "RelativeDocumentMoniker": "APICuidadosCapilar\\Controllers\\CuidadoController.cs",
               "ToolTip": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Controllers\\CuidadoController.cs",
               "RelativeToolTip": "APICuidadosCapilar\\Controllers\\CuidadoController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwEAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwEAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-07T12:31:20.194Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\APICuidadosCapilar\\Program.cs",
               "RelativeDocumentMoniker": "APICuidadosCapilar\\Program.cs",
@@ -55,12 +102,11 @@
               "RelativeToolTip": "APICuidadosCapilar\\Program.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAACoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T13:04:16.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-01T13:04:16.178Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Lavagem.cs",
               "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\Models.CuidadosCapilar\\Model\\Lavagem.cs",
               "RelativeDocumentMoniker": "Models.CuidadosCapilar\\Model\\Lavagem.cs",
@@ -72,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Produto.cs",
               "DocumentMoniker": "D:\\Git\\CuidadosCapilar\\APICuidadosCapilar\\Models.CuidadosCapilar\\Model\\Produto.cs",
               "RelativeDocumentMoniker": "Models.CuidadosCapilar\\Model\\Produto.cs",

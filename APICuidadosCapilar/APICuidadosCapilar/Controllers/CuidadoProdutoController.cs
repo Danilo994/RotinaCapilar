@@ -45,6 +45,23 @@ namespace APICuidadosCapilar.Controllers
             }
         }
 
+        [HttpGet("cuidado/{idCuidado}")]
+        public async Task<ActionResult<List<CuidadoProduto>>> GetProdutoByCuidado(int idCuidado)
+        {
+            try
+            {
+                var produtos = await _repositoryCuidadoProduto.GetProdutosByCuidado(idCuidado);
+                if (produtos == null)
+                    return NotFound("Nenhum produto encontrado para esse cuidado");
+
+                return Ok(produtos);
+            }
+            catch
+            {
+                return BadRequest("Erro ao retornar produtos do cuidado");
+            }
+        }
+
         [HttpPost]
         public async Task<ActionResult<CuidadoProduto>> AddCuidadoProduto(CuidadoProduto cuidadoProduto)
         {
@@ -71,6 +88,20 @@ namespace APICuidadosCapilar.Controllers
             catch
             {
                 return BadRequest("Erro ao excluir CuidadoProduto");
+            }
+        }
+
+        [HttpDelete("cuidado/{idCuidado}")]
+        public async Task<ActionResult<List<CuidadoProduto>>> DeleteProdutosByCuidado(int idCuidado)
+        {
+            try
+            {
+                var lista = await _repositoryCuidadoProduto.DeleteProdutosByCuidado(idCuidado);
+                return Ok(lista);
+            }
+            catch
+            {
+                return BadRequest("Erro ao deletar produtos do cuidado");
             }
         }
     }
