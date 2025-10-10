@@ -1,6 +1,8 @@
-﻿using APICuidadosCapilar.Repositories;
+﻿using APICuidadosCapilar.Interfaces;
+using APICuidadosCapilar.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Models.CuidadosCapilar.Model;
+using Models.CuidadosCapilar.ViewModel;
 
 namespace APICuidadosCapilar.Controllers
 {
@@ -17,13 +19,15 @@ namespace APICuidadosCapilar.Controllers
             _context = context;
         }
 
-        //lista Cuidados
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cuidado>>> ListaCuidados()
+        public async Task<ActionResult<List<CuidadoVM>>> GetProdutoByCuidado()
         {
             try
             {
-                var cuidados = await _repositoryCuidado.SelecionarTodosAsync();
+                var cuidados = await _repositoryCuidado.GetCuidadosComProdutos();
+                if (cuidados == null)
+                    return NotFound("Nenhum cuidado encontrado");
+
                 return Ok(cuidados);
             }
             catch
@@ -58,9 +62,9 @@ namespace APICuidadosCapilar.Controllers
                 await _repositoryCuidado.IncluirAsync(cuidado);
                 return Ok(cuidado);
             }
-            catch
+            catch (Exception ex)
             {
-                return BadRequest("Erro ao adicionar cuidado");
+                return BadRequest($"Erro ao adicionar cuidado: {ex.Message}");
             }
         }
 

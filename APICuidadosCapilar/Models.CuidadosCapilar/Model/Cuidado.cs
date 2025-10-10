@@ -21,5 +21,5 @@ public partial class Cuidado
 
     public virtual ICollection<Foto> Fotos { get; set; } = new List<Foto>();
 
-    public virtual Lavagem IdLavagemNavigation { get; set; } = null!;
+    public virtual Lavagem? IdLavagemNavigation { get; set; }
 }

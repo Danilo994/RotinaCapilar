@@ -81,7 +81,7 @@ namespace APICuidadosCapilar.Repositories
 
         public async Task<T> IncluirAsync(T obj)
         {
-            _context.Set<T>().AddAsync(obj);
+            await _context.Set<T>().AddAsync(obj);
             if (_saveChanges)
             {
                 await _context.SaveChangesAsync();

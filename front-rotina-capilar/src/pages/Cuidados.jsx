@@ -36,31 +36,30 @@ function Cuidados(){
 
     async function handleSalvar() {
       let idCuidado;
-      
+      if(cuidadoSelecionado){
+          await api.put("/Cuidado", form);
+          idCuidado = form.idCuidado;
+      } else{
+          const response = await api.post("/Cuidado", form);
+          idCuidado = response.data.idCuidado;
+      }
+
+      if(produtosSelecionados.length > 0){
         if(cuidadoSelecionado){
-            await api.put("/Cuidado", form);
-            idCuidado = form.idCuidado;
-        } else{
-            const response = await api.post("/Cuidado", form);
-            idCuidado = response.data.idCuidado;
+          await api.delete(`/CuidadoProduto/cuidado/${idCuidado}`)
         }
-
-        if(produtosSelecionados.length > 0){
-          if(cuidadoSelecionado){
-            await api.delete(`/CuidadoProduto/cuidado/${idCuidado}`)
-          }
-          for(const idProduto of produtosSelecionados){
-            await api.post("/CuidadoProduto", {
-              idCuidado,
-              idProduto: parseInt(idProduto)
-            });
-          }
+        for(const idProduto of produtosSelecionados){
+          await api.post("/CuidadoProduto", {
+            idCuidado,
+            idProduto: parseInt(idProduto)
+          });
         }
+      }
 
-        setForm({idCuidado: 0, dataCuidado: "", idLavagem: 0});
-        setCuidadoSelecionado(null);
-        setProdutosSelecionados([]);
-        carregaCuidados();
+      setForm({idCuidado: 0, dataCuidado: "", idLavagem: 0});
+      setCuidadoSelecionado(null);
+      setProdutosSelecionados([]);
+      carregaCuidados();
     }
 
     function handleEditar(cuidado){

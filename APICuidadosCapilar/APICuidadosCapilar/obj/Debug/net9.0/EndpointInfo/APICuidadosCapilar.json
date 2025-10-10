@@ -180,7 +180,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Cuidado"
+                    "$ref": "#/components/schemas/CuidadoVM"
                   }
                 }
               },
@@ -188,7 +188,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Cuidado"
+                    "$ref": "#/components/schemas/CuidadoVM"
                   }
                 }
               },
@@ -196,7 +196,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Cuidado"
+                    "$ref": "#/components/schemas/CuidadoVM"
                   }
                 }
               }
@@ -530,6 +530,102 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CuidadoProduto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CuidadoProduto/cuidado/{idCuidado}": {
+      "get": {
+        "tags": [
+          "CuidadoProduto"
+        ],
+        "parameters": [
+          {
+            "name": "idCuidado",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CuidadoProduto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CuidadoProduto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CuidadoProduto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CuidadoProduto"
+        ],
+        "parameters": [
+          {
+            "name": "idCuidado",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CuidadoProduto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CuidadoProduto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CuidadoProduto"
+                  }
                 }
               }
             }
@@ -1221,6 +1317,31 @@
           },
           "idProdutoNavigation": {
             "$ref": "#/components/schemas/Produto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CuidadoVM": {
+        "type": "object",
+        "properties": {
+          "idCuidado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataCuidado": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lavagem": {
+            "type": "string",
+            "nullable": true
+          },
+          "produtos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

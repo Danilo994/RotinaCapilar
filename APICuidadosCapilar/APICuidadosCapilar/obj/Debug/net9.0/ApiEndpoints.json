@@ -99,7 +99,7 @@
   },
   {
     "ContainingType": "APICuidadosCapilar.Controllers.CuidadoController",
-    "Method": "ListaCuidados",
+    "Method": "GetProdutoByCuidado",
     "RelativePath": "api/Cuidado",
     "HttpMethod": "GET",
     "IsController": true,
@@ -107,7 +107,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Models.CuidadosCapilar.Model.Cuidado, Models.CuidadosCapilar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Models.CuidadosCapilar.ViewModel.CuidadoVM, Models.CuidadosCapilar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -310,6 +310,58 @@
     "ReturnTypes": [
       {
         "Type": "Models.CuidadosCapilar.Model.CuidadoProduto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "APICuidadosCapilar.Controllers.CuidadoProdutoController",
+    "Method": "GetProdutoByCuidado",
+    "RelativePath": "api/CuidadoProduto/cuidado/{idCuidado}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCuidado",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Models.CuidadosCapilar.Model.CuidadoProduto, Models.CuidadosCapilar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "APICuidadosCapilar.Controllers.CuidadoProdutoController",
+    "Method": "DeleteProdutosByCuidado",
+    "RelativePath": "api/CuidadoProduto/cuidado/{idCuidado}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCuidado",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Models.CuidadosCapilar.Model.CuidadoProduto, Models.CuidadosCapilar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

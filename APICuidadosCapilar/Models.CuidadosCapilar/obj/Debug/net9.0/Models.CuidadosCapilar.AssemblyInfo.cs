@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Models.CuidadosCapilar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eccdbb654655c095c90aff8b5db14436571f01f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+717207072833711f136b735229fd3c18de0459fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Models.CuidadosCapilar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Models.CuidadosCapilar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
