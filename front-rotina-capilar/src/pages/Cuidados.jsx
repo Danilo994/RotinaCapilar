@@ -17,7 +17,9 @@ function Cuidados(){
 
     async function carregaCuidados(){
         const response = await api.get("/Cuidado");
-        setCuidados(response.data);
+        const lista = response.data?.value || [];
+        console.log(lista);
+        setCuidados(lista);
     }
 
     async function carregaLavagens() {
@@ -128,6 +130,7 @@ function Cuidados(){
             <th>ID</th>
             <th>Data do Cuidado</th>
             <th>Lavagem</th>
+            <th>Produtos</th>
             <th>Editar</th>
             <th>Excluir</th>
           </tr>
@@ -135,14 +138,15 @@ function Cuidados(){
         <tbody>
           {cuidados.length === 0 ? (
             <tr>
-              <td colSpan="5">Nenhum cuidado encontrado</td>
+              <td colSpan="6">Nenhum cuidado encontrado</td>
             </tr>
           ) : (
             cuidados.map((c) => (
               <tr key={c.idCuidado}>
                 <td>{c.idCuidado}</td>
-                <td>{new Date(carregaCuidados.dataCuidado).toLocaleString()}</td>
-                <td>{carregaCuidados.idLavagem}</td>
+                <td>{new Date(c.dataCuidado).toLocaleDateString()}</td>
+                <td>{c.lavagem}</td>
+                <td>{c.produtos.join(", ")}</td>
                 <td>
                   <button onClick={() => handleEditar(c)}>Editar</button>
                 </td>
