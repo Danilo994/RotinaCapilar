@@ -91,12 +91,18 @@ namespace APICuidadosCapilar.Controllers
             try
             {
                 var cuidado = await _repositoryCuidado.SelecionarPkAsync(id);
+
+                if(cuidado == null)
+                {
+                    return NotFound("Cuidado não encontrado");
+                }
+
                 await _repositoryCuidado.ExcluirAsync(cuidado);
-                return Ok("Cuidado excluida");
+                return Ok("Cuidado excluido");
             }
-            catch
+            catch (Exception ex)
             {
-                return BadRequest("Erro ao excluir cuidado");
+                return BadRequest($"Erro ao excluir cuidado: { ex.Message}");
             }
         }
     }

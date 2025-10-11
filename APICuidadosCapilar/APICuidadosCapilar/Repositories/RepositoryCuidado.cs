@@ -7,9 +7,9 @@ namespace APICuidadosCapilar.Repositories
 {
     public class RepositoryCuidado : RepositoryBase<Cuidado>
     {
-        public RepositoryCuidado(DBRotinaCapilarContext context) : base(context) 
-        { 
-            
+        public RepositoryCuidado(DBRotinaCapilarContext context) : base(context)
+        {
+
         }
         public async Task<ActionResult<List<CuidadoVM>>> GetCuidadosComProdutos()
         {
@@ -28,6 +28,24 @@ namespace APICuidadosCapilar.Repositories
             }).ToList();
 
             return resultado;
+        }
+
+        public async Task ExcluirAsync(Cuidado cuidado)
+        {
+            var entity = await _context.Cuidados
+                .Include(c => c.CuidadoProdutos)
+                .Include(c => c.Fotos)
+                .Include(c => c.Avaliacaos)
+                .FirstOrDefaultAsync(c => c.IdCuidado == cuidado.IdCuidado);
+
+            if (entity != null)
+            {
+                _context.CuidadoProdutos.RemoveRange(entity.CuidadoProdutos);
+                _context.Fotos.RemoveRange(entity.Fotos);
+                _context.Avaliacaos.RemoveRange(entity.Avaliacaos);
+                _context.Cuidados.Remove(entity);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

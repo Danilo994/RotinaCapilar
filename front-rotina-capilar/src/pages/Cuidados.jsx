@@ -72,6 +72,7 @@ function Cuidados(){
     async function handleExcluir(id) {
         if(!window.confirm("Deseja excluir este cuidado?")) return;
         await api.delete(`/Cuidado/${id}`);
+        carregaCuidados();
     }
 
     return (
