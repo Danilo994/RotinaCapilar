@@ -61,14 +61,31 @@ namespace APICuidadosCapilar.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Avaliacao>> DeleteAvaliacao(int id)
+        [HttpPost("avaliar")]
+        public async Task<ActionResult<Avaliacao>> AvaliarCuidado(Avaliacao avaliacao)
         {
             try
             {
-                var avaliacao = await _repositoryAvaliacao.SelecionarPkAsync(id);
-                await _repositoryAvaliacao.ExcluirAsync(avaliacao);
-                return Ok("Avaliacao excluida");
+                await _repositoryAvaliacao.AvaliarCuidado(avaliacao);
+                return Ok("Avaliacao adicionada");
+            }
+            catch
+            {
+                return BadRequest("Erro ao salvar avaliação");
+            }
+        }
+
+        [HttpDelete("avaliar/{idCuidado}")]
+        public async Task<ActionResult> DeleteAvaliacao(int idCuidado)
+        {
+            try{
+                var sucesso = await _repositoryAvaliacao.DeleteAvaliacao(idCuidado);
+
+                if (!sucesso)
+                {
+                    return NotFound("Avaliação não encontrada");
+                }
+                return Ok("Avaliação excluida");
             }
             catch
             {

@@ -98,6 +98,32 @@
     ]
   },
   {
+    "ContainingType": "APICuidadosCapilar.Controllers.AvaliacaoController",
+    "Method": "AvaliarCuidado",
+    "RelativePath": "api/Avaliacao/avaliar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "avaliacao",
+        "Type": "Models.CuidadosCapilar.Model.Avaliacao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Models.CuidadosCapilar.Model.Avaliacao",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "APICuidadosCapilar.Controllers.CuidadoController",
     "Method": "GetProdutoByCuidado",
     "RelativePath": "api/Cuidado",

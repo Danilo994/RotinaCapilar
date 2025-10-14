@@ -167,6 +167,54 @@
         }
       }
     },
+    "/api/Avaliacao/avaliar": {
+      "post": {
+        "tags": [
+          "Avaliacao"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Avaliacao"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Avaliacao"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Avaliacao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Avaliacao"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Avaliacao"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Avaliacao"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Cuidado": {
       "get": {
         "tags": [

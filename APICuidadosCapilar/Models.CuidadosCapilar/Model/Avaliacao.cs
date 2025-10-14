@@ -15,5 +15,5 @@ public partial class Avaliacao
 
     public DateTime DataAvaliacao { get; set; }
 
-    public virtual Cuidado IdCuidadoNavigation { get; set; } = null!;
+    public virtual Cuidado? IdCuidadoNavigation { get; set; }
 }
