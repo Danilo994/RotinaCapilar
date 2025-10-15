@@ -127,44 +127,6 @@
             }
           }
         }
-      },
-      "delete": {
-        "tags": [
-          "Avaliacao"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Avaliacao"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Avaliacao"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Avaliacao"
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/api/Avaliacao/avaliar": {
@@ -211,6 +173,29 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/Avaliacao/avaliar/{idCuidado}": {
+      "delete": {
+        "tags": [
+          "Avaliacao"
+        ],
+        "parameters": [
+          {
+            "name": "idCuidado",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }

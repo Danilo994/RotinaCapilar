@@ -73,32 +73,6 @@
   },
   {
     "ContainingType": "APICuidadosCapilar.Controllers.AvaliacaoController",
-    "Method": "DeleteAvaliacao",
-    "RelativePath": "api/Avaliacao/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Models.CuidadosCapilar.Model.Avaliacao",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "APICuidadosCapilar.Controllers.AvaliacaoController",
     "Method": "AvaliarCuidado",
     "RelativePath": "api/Avaliacao/avaliar",
     "HttpMethod": "POST",
@@ -122,6 +96,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "APICuidadosCapilar.Controllers.AvaliacaoController",
+    "Method": "DeleteAvaliacao",
+    "RelativePath": "api/Avaliacao/avaliar/{idCuidado}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCuidado",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "APICuidadosCapilar.Controllers.CuidadoController",

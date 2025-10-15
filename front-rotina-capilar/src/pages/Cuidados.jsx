@@ -75,6 +75,20 @@ function Cuidados(){
         carregaCuidados();
     }
 
+    const handleAvaliar = async (idCuidado) => {
+      const nota = prompt("Digite a nota (1 a 5):");
+      const observacao = prompt("Digite a observação:");
+      await api.post("Cuidado/avaliar", {idCuidado, nota, observacao});
+      alert("Avaliação salva");
+      carregaCuidados();
+    }
+
+    async function handleExcluirAvaliacao(idCuidado) {
+      if(!window.confirm("Deseja excluir essa avaliação?")) return;
+      await api.delete(`/Cuidado/avaliar/${idCuidado}`);
+      carregaCuidados();
+    }
+
     return (
     <div>
       <h2>Gerenciar Cuidados</h2>
@@ -132,6 +146,7 @@ function Cuidados(){
             <th>Data do Cuidado</th>
             <th>Lavagem</th>
             <th>Produtos</th>
+            <th>Avaliação</th>
             <th>Editar</th>
             <th>Excluir</th>
           </tr>
@@ -139,7 +154,7 @@ function Cuidados(){
         <tbody>
           {cuidados.length === 0 ? (
             <tr>
-              <td colSpan="6">Nenhum cuidado encontrado</td>
+              <td colSpan="7">Nenhum cuidado encontrado</td>
             </tr>
           ) : (
             cuidados.map((c) => (
@@ -148,6 +163,18 @@ function Cuidados(){
                 <td>{new Date(c.dataCuidado).toLocaleDateString()}</td>
                 <td>{c.lavagem}</td>
                 <td>{c.produtos.join(", ")}</td>
+                <td>
+                  {c.avaliacao ? (
+                    <>
+                      Nota: {c.avaliacao.nota} <br />
+                      "{c.avaliacao.comentario}"
+                      <button onClick={() => handleAvaliar(c.idCuidado)}>Editar</button>
+                      <button onClick={() => handleExcluirAvaliacao(c.idCuidado)}>Excluir</button>
+                    </>
+                  ) : (
+                    <button onClick={() => handleAvaliar(c.idCuidado)}>Avaliar</button>
+                  )}
+                </td>
                 <td>
                   <button onClick={() => handleEditar(c)}>Editar</button>
                 </td>
