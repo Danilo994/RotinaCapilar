@@ -164,10 +164,10 @@ function Cuidados(){
                 <td>{c.lavagem}</td>
                 <td>{c.produtos.join(", ")}</td>
                 <td>
-                  {c.avaliacao ? (
+                  {c.idAvaliacao ? (
                     <>
-                      Nota: {c.avaliacao.nota} <br />
-                      "{c.avaliacao.comentario}"
+                      Nota: {c.nota} <br />
+                      "{c.observacao}"
                       <button onClick={() => handleAvaliar(c.idCuidado)}>Editar</button>
                       <button onClick={() => handleExcluirAvaliacao(c.idCuidado)}>Excluir</button>
                     </>

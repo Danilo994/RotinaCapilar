@@ -1375,6 +1375,25 @@
               "type": "string"
             },
             "nullable": true
+          },
+          "idAvaliacao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nota": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "observacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataAvaliacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false

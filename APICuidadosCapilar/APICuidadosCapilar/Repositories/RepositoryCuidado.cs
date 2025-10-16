@@ -17,6 +17,7 @@ namespace APICuidadosCapilar.Repositories
                 .Include(c => c.CuidadoProdutos)
                     .ThenInclude(cp => cp.IdProdutoNavigation)
                 .Include(c => c.IdLavagemNavigation)
+                .Include(c => c.Avaliacaos)
                 .ToListAsync();
 
             var resultado = cuidados.Select(c => new CuidadoVM
@@ -24,7 +25,11 @@ namespace APICuidadosCapilar.Repositories
                 idCuidado = c.IdCuidado,
                 DataCuidado = c.DataCuidado,
                 Lavagem = c.IdLavagemNavigation.NomeLavagem,
-                Produtos = c.CuidadoProdutos.Select(cp => cp.IdProdutoNavigation.NomeProduto).ToList()
+                Produtos = c.CuidadoProdutos.Select(cp => cp.IdProdutoNavigation.NomeProduto).ToList(),
+                idAvaliacao = c.Avaliacaos.FirstOrDefault()?.IdAvaliacao,
+                Nota = c.Avaliacaos.FirstOrDefault()?.Nota,
+                Observacao = c.Avaliacaos.FirstOrDefault()?.Observacao,
+                DataAvaliacao = c.Avaliacaos.FirstOrDefault()?.DataAvaliacao
             }).ToList();
 
             return resultado;
