@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import Header from "../components/Header";
 
 function Produtos(){
     const [produtos, setProdutos] = useState([]);
@@ -41,6 +42,8 @@ function Produtos(){
     }
 
     return (
+      <>
+      <Header />
     <div>
       <h2>Gerenciar Produtos</h2>
 
@@ -93,6 +96,7 @@ function Produtos(){
         </tbody>
       </table>
     </div>
+    </>
     );
 }
 

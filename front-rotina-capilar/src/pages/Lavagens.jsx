@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import Header from "../components/Header";
 
 function Lavagens(){
     const [lavagens, setLavagens] = useState([]);
@@ -41,6 +42,8 @@ function Lavagens(){
     }
 
     return (
+      <>
+      <Header />
     <div>
       <h2>Gerenciar Lavagens</h2>
 
@@ -93,6 +96,7 @@ function Lavagens(){
         </tbody>
       </table>
     </div>
+    </>
     );
 }
 

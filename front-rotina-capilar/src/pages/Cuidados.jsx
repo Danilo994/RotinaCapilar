@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import Header from "../components/Header";
 
 function Cuidados(){
     const [cuidados, setCuidados] = useState([]);
@@ -90,6 +91,8 @@ function Cuidados(){
     }
 
     return (
+      <>
+      <Header />
     <div>
       <h2>Gerenciar Cuidados</h2>
 
@@ -187,6 +190,7 @@ function Cuidados(){
         </tbody>
       </table>
     </div>
+    </>
     );
 }
 
