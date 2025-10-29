@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import Header from "../components/Header";
+import "../styles/tables.css";
 
 function Cuidados(){
     const [cuidados, setCuidados] = useState([]);
@@ -93,16 +94,18 @@ function Cuidados(){
     return (
       <>
       <Header />
-    <div>
-      <h2>Gerenciar Cuidados</h2>
+    <div className="page-container">
+      <h2 className="page-title">Gerenciar Cuidados</h2>
 
-      <div style={{ marginBottom: "20px" }}>
+      <div className="form-container cuidados-form">
+        <label>Data do Cuidado:</label>
         <input
           type="datetime-local"
           name="dataCuidado"
           value={form.dataCuidado}
           onChange={handleChange}
         />
+        <label>Tipo de Lavagem:</label>
         <select 
             name="idLavagem"
             value={form.idLavagem}
@@ -124,7 +127,7 @@ function Cuidados(){
             const valores = Array.from(e.target.selectedOptions, (opt) => opt.value);
             setProdutosSelecionados(valores);
           }}
-          style={{width: "100%", height: "120px"}}
+          className="multiselect"
         >
           {produtos.map((p) => (
             <option key={p.idProduto} value={p.idProduto}>
@@ -136,13 +139,13 @@ function Cuidados(){
           {cuidadoSelecionado ? "Salvar Edição" : "Adicionar"}
         </button>
         {cuidadoSelecionado && (
-          <button onClick={() => { setCuidadoSelecionado(null); setForm({idCuidado: 0, dataCuidado: "", idLavagem: 0}); }}>
+          <button className="cancelar" onClick={() => { setCuidadoSelecionado(null); setForm({idCuidado: 0, dataCuidado: "", idLavagem: 0}); }}>
             Cancelar
           </button>
         )}
       </div>
 
-      <table border="1" cellPadding="8" style={{ width: "100%" }}>
+      <table className="table">
         <thead>
           <tr>
             <th>ID</th>
@@ -157,7 +160,7 @@ function Cuidados(){
         <tbody>
           {cuidados.length === 0 ? (
             <tr>
-              <td colSpan="7">Nenhum cuidado encontrado</td>
+              <td colSpan="7" className="empty-row">Nenhum cuidado encontrado</td>
             </tr>
           ) : (
             cuidados.map((c) => (
@@ -166,23 +169,25 @@ function Cuidados(){
                 <td>{new Date(c.dataCuidado).toLocaleDateString()}</td>
                 <td>{c.lavagem}</td>
                 <td>{c.produtos.join(", ")}</td>
-                <td>
+                <td className="avaliacao-cell">
                   {c.idAvaliacao ? (
-                    <>
-                      Nota: {c.nota} <br />
-                      "{c.observacao}"
-                      <button onClick={() => handleAvaliar(c.idCuidado)}>Editar</button>
-                      <button onClick={() => handleExcluirAvaliacao(c.idCuidado)}>Excluir</button>
-                    </>
+                    <div className="avaliacao">
+                      <p><strong>Nota:</strong> {c.nota}</p>
+                      <p className="observacao">"{c.observacao}"</p>
+                      <div className="avaliacao-buttons">
+                        <button className="edit" onClick={() => handleAvaliar(c.idCuidado)}>Editar</button>
+                        <button className="delete" onClick={() => handleExcluirAvaliacao(c.idCuidado)}>Excluir</button>
+                      </div>
+                    </div>
                   ) : (
-                    <button onClick={() => handleAvaliar(c.idCuidado)}>Avaliar</button>
+                    <button className="avaliar-btn" onClick={() => handleAvaliar(c.idCuidado)}>Avaliar</button>
                   )}
                 </td>
                 <td>
-                  <button onClick={() => handleEditar(c)}>Editar</button>
+                  <button className="edit" onClick={() => handleEditar(c)}>Editar</button>
                 </td>
                 <td>
-                  <button onClick={() => handleExcluir(c.idCuidado)}>Excluir</button>
+                  <button className="delete" onClick={() => handleExcluir(c.idCuidado)}>Excluir</button>
                 </td>
               </tr>
             ))

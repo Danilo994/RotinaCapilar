@@ -1,0 +1,176 @@
+.page-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.form-container input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-container button {
+    padding: 8px 14px;
+    background-color: #0077cc;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #005fa3;
+}
+
+.form-container .cancelar {
+    background-color: #999;
+}
+
+.form-container .cancelar:hover {
+    background-color: #777;
+}
+
+.cuidados-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.cuidados-form label {
+    font-weight: 500;
+    color: #333;
+}
+
+.cuidados-form select, .cuidados-form input[type="datetime-local"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.multiselect {
+    height: 120px;
+    width: 100%;
+    resize: vertical;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+.table th, .table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f8f8;
+}
+
+.table td {
+  color: #333;
+}
+
+.table button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.table .edit {
+  background-color: #4caf50;
+}
+
+.table .edit:hover {
+  background-color: #3e8e41;
+}
+
+.table .delete {
+  background-color: #e53935;
+}
+
+.table .delete:hover {
+  background-color: #c62828;
+}
+
+td.empty-row {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+.avaliacao-cell {
+  min-width: 200px;
+  vertical-align: top;
+}
+
+.avaliacao {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.avaliacao p {
+  margin: 0;
+}
+
+.avaliacao .observacao {
+  font-style: italic;
+  color: #555;
+}
+
+.avaliacao-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.avaliar-btn {
+  padding: 6px 10px;
+  background-color: #ffa000;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.avaliar-btn:hover {
+  background-color: #ff8f00;
+}

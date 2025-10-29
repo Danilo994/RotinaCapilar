@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import Header from "../components/Header";
+import "../styles/tables.css";
 
 function Lavagens(){
     const [lavagens, setLavagens] = useState([]);
@@ -44,10 +45,10 @@ function Lavagens(){
     return (
       <>
       <Header />
-    <div>
-      <h2>Gerenciar Lavagens</h2>
+    <div className="page-container">
+      <h2 className="page-title">Gerenciar Lavagens</h2>
 
-      <div style={{ marginBottom: "20px" }}>
+      <div className="form-container">
         <input
           type="text"
           name="nomeLavagem"
@@ -59,13 +60,13 @@ function Lavagens(){
           {lavagemSelecionada ? "Salvar Edição" : "Adicionar"}
         </button>
         {lavagemSelecionada && (
-          <button onClick={() => { setLavagemSelecionada(null); setForm({ nomeLavagem: "" }); }}>
+          <button className="cancelar" onClick={() => { setLavagemSelecionada(null); setForm({ nomeLavagem: "" }); }}>
             Cancelar
           </button>
         )}
       </div>
 
-      <table border="1" cellPadding="8" style={{ width: "100%" }}>
+      <table className="table">
         <thead>
           <tr>
             <th>ID</th>
@@ -77,7 +78,7 @@ function Lavagens(){
         <tbody>
           {lavagens.length === 0 ? (
             <tr>
-              <td colSpan="4">Nenhuma lavagem encontrado</td>
+              <td colSpan="4" className="empty-row">Nenhuma lavagem encontrado</td>
             </tr>
           ) : (
             lavagens.map((l) => (
@@ -85,10 +86,10 @@ function Lavagens(){
                 <td>{l.idLavagem}</td>
                 <td>{l.nomeLavagem}</td>
                 <td>
-                  <button onClick={() => handleEditar(l)}>Editar</button>
+                  <button className="edit" onClick={() => handleEditar(l)}>Editar</button>
                 </td>
                 <td>
-                  <button onClick={() => handleExcluir(l.idProduto)}>Excluir</button>
+                  <button className="delete" onClick={() => handleExcluir(l.idProduto)}>Excluir</button>
                 </td>
               </tr>
             ))
