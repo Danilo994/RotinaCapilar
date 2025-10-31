@@ -1,5 +1,5 @@
 .header {
-    background-color: #3b82f6;
+    background-color: #0077cc;;
     color: white;
     padding: 15px 0;
     position: sticky;
@@ -15,13 +15,18 @@
     gap: 30px;
 }
 
-.menu li {
+.menu a {
     color: white;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.menu li:hover, .menu li.active {
-    color: #ffeb3b;
+.menu a:hover, .menu a.active {
+    color: #e0e0e0;
+}
+
+.menu a.active {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 3px;
 }

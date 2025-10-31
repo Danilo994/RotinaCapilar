@@ -17,8 +17,12 @@ function Produtos(){
         setProdutos(response.data);
     }
 
-    function handleChange(e){
-        setForm({ ...form, [e.target.name]: e.target.name});
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({
+          ...prev,
+          [name]: value
+        }));
     }
 
     async function handleSalvar() {
@@ -40,6 +44,7 @@ function Produtos(){
     async function handleExcluir(id) {
         if(!window.confirm("Deseja excluir este produto?")) return;
         await api.delete(`/Produtos/${id}`);
+        carregaProdutos();
     }
 
     return (

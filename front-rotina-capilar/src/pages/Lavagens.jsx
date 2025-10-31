@@ -17,8 +17,12 @@ function Lavagens(){
         setLavagens(response.data);
     }
 
-    function handleChange(e){
-        setForm({ ...form, [e.target.name]: e.target.name});
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({
+          ...prev,
+          [name]: value
+        }));
     }
 
     async function handleSalvar() {
@@ -40,6 +44,7 @@ function Lavagens(){
     async function handleExcluir(id) {
         if(!window.confirm("Deseja excluir esta lavagem?")) return;
         await api.delete(`/Lavagem/${id}`);
+        carregaLavagens();
     }
 
     return (
@@ -89,7 +94,7 @@ function Lavagens(){
                   <button className="edit" onClick={() => handleEditar(l)}>Editar</button>
                 </td>
                 <td>
-                  <button className="delete" onClick={() => handleExcluir(l.idProduto)}>Excluir</button>
+                  <button className="delete" onClick={() => handleExcluir(l.idLavagem)}>Excluir</button>
                 </td>
               </tr>
             ))
