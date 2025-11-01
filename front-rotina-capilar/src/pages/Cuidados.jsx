@@ -20,7 +20,6 @@ function Cuidados(){
     async function carregaCuidados(){
         const response = await api.get("/Cuidado");
         const lista = response.data?.value || [];
-        console.log(lista);
         setCuidados(lista);
     }
 
@@ -34,8 +33,12 @@ function Cuidados(){
       setProdutos(response.data);
     }
 
-    function handleChange(e){
-        setForm({ ...form, [e.target.name]: e.target.value});
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({
+          ...prev,
+          [name]: value
+        }));
     }
 
     async function handleSalvar() {
@@ -80,14 +83,14 @@ function Cuidados(){
     const handleAvaliar = async (idCuidado) => {
       const nota = prompt("Digite a nota (1 a 5):");
       const observacao = prompt("Digite a observação:");
-      await api.post("Cuidado/avaliar", {idCuidado, nota, observacao});
+      await api.post("Avaliacao/avaliar", {idCuidado, nota, observacao});
       alert("Avaliação salva");
       carregaCuidados();
     }
 
     async function handleExcluirAvaliacao(idCuidado) {
       if(!window.confirm("Deseja excluir essa avaliação?")) return;
-      await api.delete(`/Cuidado/avaliar/${idCuidado}`);
+      await api.delete(`/Avaliacao/avaliar/${idCuidado}`);
       carregaCuidados();
     }
 
@@ -100,7 +103,7 @@ function Cuidados(){
       <div className="form-container cuidados-form">
         <label>Data do Cuidado:</label>
         <input
-          type="datetime-local"
+          type="date"
           name="dataCuidado"
           value={form.dataCuidado}
           onChange={handleChange}
