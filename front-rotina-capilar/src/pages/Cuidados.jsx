@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../services/api";
 import Header from "../components/Header";
 import "../styles/tables.css";
+import "../styles/avaliacaoModal.css";
 
 function Cuidados(){
     const [cuidados, setCuidados] = useState([]);
@@ -10,6 +11,8 @@ function Cuidados(){
     const [cuidadoSelecionado, setCuidadoSelecionado] = useState(null);
     const [produtosSelecionados, setProdutosSelecionados] = useState([]);
     const [form, setForm] = useState({idCuidado: "0", dataCuidado: "", idLavagem: "0"});
+    const [mostrarModal, setMostrarModal] = useState(false);
+    const [avaliacao, setAvaliacao] = useState({ idCuidado: 0, nota: "", observacao: ""});
 
     useEffect(() => {
         carregaCuidados();
@@ -80,15 +83,29 @@ function Cuidados(){
         carregaCuidados();
     }
 
-    const handleAvaliar = async (idCuidado) => {
-      const nota = prompt("Digite a nota (1 a 5):");
-      const observacao = prompt("Digite a observação:");
-      await api.post("Avaliacao/avaliar", {idCuidado, nota, observacao});
-      alert("Avaliação salva");
+    const abrirModal = (idCuidado) => {
+      setAvaliacao({ idCuidado, nota: "", observacao: ""});
+      setMostrarModal(true);
+    };
+
+    const fecharModal = () => {
+      setMostrarModal(false);
+    };
+
+    const enviarAvaliacao = async () => {
+      if (!avaliacao.nota || !avaliacao.observacao){
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      await api.post("Avaliacao/avaliar", {idCuidado: avaliacao.idCuidado, nota: avaliacao.nota, observacao: avaliacao.observacao});
+      
+      alert("Avaliação salva!");
+      fecharModal();
       carregaCuidados();
     }
 
-    async function handleExcluirAvaliacao(idCuidado) {
+    async function excluirAvaliacao(idCuidado) {
       if(!window.confirm("Deseja excluir essa avaliação?")) return;
       await api.delete(`/Avaliacao/avaliar/${idCuidado}`);
       carregaCuidados();
@@ -178,12 +195,12 @@ function Cuidados(){
                       <p><strong>Nota:</strong> {c.nota}</p>
                       <p className="observacao">"{c.observacao}"</p>
                       <div className="avaliacao-buttons">
-                        <button className="edit" onClick={() => handleAvaliar(c.idCuidado)}>Editar</button>
-                        <button className="delete" onClick={() => handleExcluirAvaliacao(c.idCuidado)}>Excluir</button>
+                        <button className="edit" onClick={() => abrirModal(c.idCuidado)}>Editar</button>
+                        <button className="delete" onClick={() => excluirAvaliacao(c.idCuidado)}>Excluir</button>
                       </div>
                     </div>
                   ) : (
-                    <button className="avaliar-btn" onClick={() => handleAvaliar(c.idCuidado)}>Avaliar</button>
+                    <button className="avaliar-btn" onClick={() => abrirModal(c.idCuidado)}>Avaliar</button>
                   )}
                 </td>
                 <td>
@@ -198,6 +215,32 @@ function Cuidados(){
         </tbody>
       </table>
     </div>
+
+    {mostrarModal && (
+      <div className="modal-overlay">
+        <div className="modal-content">
+          <h3>Avaliar Cuidado</h3>
+          <label>Nota (1 a 5):</label>
+          <input
+            type="number"
+            min="1"
+            max="5"
+            value={avaliacao.nota}
+            onChange={(e) => setAvaliacao({ ...avaliacao, nota: e.target.value })}
+          />
+          <label>Observação:</label>
+          <textarea
+            rows="3"
+            value={avaliacao.observacao}
+            onChange={(e) => setAvaliacao({ ...avaliacao, observacao: e.target.value})}
+          ></textarea>
+          <div className="modal-buttons">
+            <button onClick={enviarAvaliacao}>Salvar</button>
+            <button className="cancelar" onClick={fecharModal}>Cancelar</button>
+          </div>
+        </div>
+      </div>
+    )}
     </>
     );
 }
