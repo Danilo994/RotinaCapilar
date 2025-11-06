@@ -83,8 +83,20 @@ function Cuidados(){
         carregaCuidados();
     }
 
-    const abrirModal = (idCuidado) => {
-      setAvaliacao({ idCuidado, nota: "", observacao: ""});
+    const abrirModal = (cuidado) => {
+      if (cuidado.nota !== undefined && cuidado.observacao !== undefined) {
+        setAvaliacao({
+          idCuidado: cuidado.idCuidado,
+          nota: cuidado.nota,
+          observacao: cuidado.observacao
+        });
+      } else {
+        setAvaliacao({
+          idCuidado: cuidado.idCuidado,
+          nota: "",
+          observacao: ""
+        });
+      }
       setMostrarModal(true);
     };
 
@@ -195,12 +207,12 @@ function Cuidados(){
                       <p><strong>Nota:</strong> {c.nota}</p>
                       <p className="observacao">"{c.observacao}"</p>
                       <div className="avaliacao-buttons">
-                        <button className="edit" onClick={() => abrirModal(c.idCuidado)}>Editar</button>
+                        <button className="edit" onClick={() => abrirModal(c)}>Editar</button>
                         <button className="delete" onClick={() => excluirAvaliacao(c.idCuidado)}>Excluir</button>
                       </div>
                     </div>
                   ) : (
-                    <button className="avaliar-btn" onClick={() => abrirModal(c.idCuidado)}>Avaliar</button>
+                    <button className="avaliar-btn" onClick={() => abrirModal(c)}>Avaliar</button>
                   )}
                 </td>
                 <td>
