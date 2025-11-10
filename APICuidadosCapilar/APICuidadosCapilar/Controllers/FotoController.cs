@@ -12,9 +12,9 @@ namespace APICuidadosCapilar.Controllers
         RepositoryFoto _repositoryFoto;
         public readonly DBRotinaCapilarContext _context;
 
-        public FotoController(DBRotinaCapilarContext context)
+        public FotoController(DBRotinaCapilarContext context, IWebHostEnvironment env)
         {
-            _repositoryFoto = new RepositoryFoto(context);
+            _repositoryFoto = new RepositoryFoto(context, env);
             _context = context;
         }
 
@@ -73,6 +73,20 @@ namespace APICuidadosCapilar.Controllers
             catch
             {
                 return BadRequest("Erro ao excluir foto");
+            }
+        }
+
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadFoto([FromForm] int idCuidado, [FromForm] IFormFile file)
+        {
+            try
+            {
+                var foto = await _repositoryFoto.UploadFoto(idCuidado, file);
+                return Ok(foto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro ao enviar a foto: {ex.Message}");
             }
         }
     }

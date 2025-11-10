@@ -111,6 +111,16 @@ function Cuidados(){
       }
 
       await api.post("Avaliacao/avaliar", {idCuidado: avaliacao.idCuidado, nota: avaliacao.nota, observacao: avaliacao.observacao});
+
+      if (avaliacao.arquivo){
+        const formData = new FormData();
+        formData.append("idCuidado", avaliacao.idCuidado);
+        formData.append("arquivo", avaliacao.arquivo);
+        
+        await api.post("Foto/upload", formData, {
+          headers: { "Content-Type": "multipart/form-data"}
+        });
+      }
       
       alert("Avaliação salva!");
       fecharModal();
@@ -246,6 +256,12 @@ function Cuidados(){
             value={avaliacao.observacao}
             onChange={(e) => setAvaliacao({ ...avaliacao, observacao: e.target.value})}
           ></textarea>
+          <label>Foto:</label>
+          <input
+           type="file" 
+           accept="image/*"
+           onChange={(e) => setAvaliacao({ ...avaliacao, arquivo: e.target.files[0]})}
+          />
           <div className="modal-buttons">
             <button onClick={enviarAvaliacao}>Salvar</button>
             <button className="cancelar" onClick={fecharModal}>Cancelar</button>
