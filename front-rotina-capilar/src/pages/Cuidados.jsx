@@ -115,7 +115,7 @@ function Cuidados(){
       if (avaliacao.arquivo){
         const formData = new FormData();
         formData.append("idCuidado", avaliacao.idCuidado);
-        formData.append("arquivo", avaliacao.arquivo);
+        formData.append("file", avaliacao.arquivo);
         
         await api.post("Foto/upload", formData, {
           headers: { "Content-Type": "multipart/form-data"}

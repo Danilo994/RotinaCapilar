@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Models.CuidadosCapilar.Model;
 using Scalar.AspNetCore;
+using APICuidadosCapilar.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,11 @@ builder.Services.AddDbContext<DBRotinaCapilarContext>(options => options.UseSqlS
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.OperationFilter<FileUploadOperationFilter>();
+});
+
 builder.Services.AddOpenApi();
 
 builder.Services.AddCors(options =>
@@ -43,12 +49,11 @@ if (app.Environment.IsDevelopment())
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Cuidados Capilar v1");
     });
+    app.UseStaticFiles();
 
     app.MapScalarApiReference();
     app.MapOpenApi();
 }
-
-app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

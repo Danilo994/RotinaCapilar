@@ -1,1 +1,20 @@
-{"Version":1,"Hash":"Ii3iwpFeEcooHbt/PzkI+5w3ZkjkTu294fJsdrh+29w=","Source":"APICuidadosCapilar","BasePath":"_content/APICuidadosCapilar","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "YLpAi0UCqowEmbviTfCsPj+MIU0At+/xdRh4aZM1vrU=",
+  "Source": "APICuidadosCapilar",
+  "BasePath": "_content/APICuidadosCapilar",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "APICuidadosCapilar/wwwroot",
+      "Source": "APICuidadosCapilar",
+      "ContentRoot": "/mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/wwwroot/",
+      "BasePath": "_content/APICuidadosCapilar",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -338,3 +338,4 @@ D:/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/bin/Debug/net9.0/Sw
 /mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/obj/Debug/net9.0/APICuidadosCapilar.pdb
 /mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/obj/Debug/net9.0/APICuidadosCapilar.genruntimeconfig.cache
 /mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/obj/Debug/net9.0/ref/APICuidadosCapilar.dll
+/mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/bin/Debug/net9.0/APICuidadosCapilar.staticwebassets.runtime.json

@@ -1,5 +1,6 @@
 ﻿using APICuidadosCapilar.Interfaces;
 using APICuidadosCapilar.Repositories;
+using APICuidadosCapilar.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Models.CuidadosCapilar.Model;
 
@@ -18,70 +19,13 @@ namespace APICuidadosCapilar.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Foto>>> ListaFotos()
-        {
-            try
-            {
-                var fotos = await _repositoryFoto.SelecionarTodosAsync();
-                return Ok(fotos);
-            }
-            catch
-            {
-                return BadRequest("Erro ao retornar lista de fotos");
-            }
-        }
-
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Foto>> GetFoto(int id)
-        {
-            try
-            {
-                var foto = await _repositoryFoto.SelecionarPkAsync(id);
-                return Ok(foto);
-            }
-            catch
-            {
-                return BadRequest("Erro ao retornar foto");
-            }
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<Foto>> AddFoto(Foto foto)
-        {
-            try
-            {
-                foto.DataUpload = DateTime.Now;
-                await _repositoryFoto.IncluirAsync(foto);
-                return Ok("Foto adicionado");
-            }
-            catch
-            {
-                return BadRequest("Erro ao adicionar foto");
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Foto>> DeleteFoto(int id)
-        {
-            try
-            {
-                var foto = await _repositoryFoto.SelecionarPkAsync(id);
-                await _repositoryFoto.ExcluirAsync(foto);
-                return Ok("Foto excluida");
-            }
-            catch
-            {
-                return BadRequest("Erro ao excluir foto");
-            }
-        }
-
         [HttpPost("upload")]
-        public async Task<IActionResult> UploadFoto([FromForm] int idCuidado, [FromForm] IFormFile file)
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadFoto([FromForm] UploadFotoDTO dto)
         {
             try
             {
-                var foto = await _repositoryFoto.UploadFoto(idCuidado, file);
+                var foto = await _repositoryFoto.UploadFoto(dto.idCuidado, dto.File);
                 return Ok(foto);
             }
             catch (Exception ex)
