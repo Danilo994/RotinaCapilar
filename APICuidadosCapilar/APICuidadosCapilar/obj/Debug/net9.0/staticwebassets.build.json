@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YLpAi0UCqowEmbviTfCsPj+MIU0At+/xdRh4aZM1vrU=",
+  "Hash": "PFVu1zbjWsd+17T5dyVcHSZO9hSnYQiMtWk5nH7w/HE=",
   "Source": "APICuidadosCapilar",
   "BasePath": "_content/APICuidadosCapilar",
   "Mode": "Default",
@@ -15,6 +15,111 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "/mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/wwwroot/uploads/04fdc4a7-09d9-48b8-b16c-4098313e77bc_Foto_eu.jpg",
+      "SourceId": "APICuidadosCapilar",
+      "SourceType": "Discovered",
+      "ContentRoot": "/mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/wwwroot/",
+      "BasePath": "_content/APICuidadosCapilar",
+      "RelativePath": "uploads/04fdc4a7-09d9-48b8-b16c-4098313e77bc_Foto_eu#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6txpfnuspe",
+      "Integrity": "ln1k6oabMQXDZxFnry4OsPqomg20U8tJ0P5BAChav6I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/04fdc4a7-09d9-48b8-b16c-4098313e77bc_Foto_eu.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/04fdc4a7-09d9-48b8-b16c-4098313e77bc_Foto_eu.6txpfnuspe.jpg",
+      "AssetFile": "/mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/wwwroot/uploads/04fdc4a7-09d9-48b8-b16c-4098313e77bc_Foto_eu.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7727"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ln1k6oabMQXDZxFnry4OsPqomg20U8tJ0P5BAChav6I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Nov 2025 13:45:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6txpfnuspe"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/04fdc4a7-09d9-48b8-b16c-4098313e77bc_Foto_eu.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ln1k6oabMQXDZxFnry4OsPqomg20U8tJ0P5BAChav6I="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/04fdc4a7-09d9-48b8-b16c-4098313e77bc_Foto_eu.jpg",
+      "AssetFile": "/mnt/dados/Git/CuidadosCapilar/APICuidadosCapilar/APICuidadosCapilar/wwwroot/uploads/04fdc4a7-09d9-48b8-b16c-4098313e77bc_Foto_eu.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7727"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ln1k6oabMQXDZxFnry4OsPqomg20U8tJ0P5BAChav6I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Nov 2025 13:45:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ln1k6oabMQXDZxFnry4OsPqomg20U8tJ0P5BAChav6I="
+        }
+      ]
+    }
+  ]
 }

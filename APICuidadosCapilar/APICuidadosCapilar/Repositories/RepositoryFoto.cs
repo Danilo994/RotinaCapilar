@@ -43,5 +43,26 @@ namespace APICuidadosCapilar.Repositories
 
             return foto;
         }
+
+        public async Task<bool> DeletarFoto(int idFoto)
+        {
+            var foto = await _context.Fotos.FindAsync(idFoto);
+            if (foto == null)
+            {
+                return false;
+            }
+
+            var filePath = Path.Combine(_env.WebRootPath, foto.UrlImagem.TrimStart('/'));
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+
+            _context.Fotos.Remove(foto);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

@@ -33,5 +33,23 @@ namespace APICuidadosCapilar.Controllers
                 return BadRequest($"Erro ao enviar a foto: {ex.Message}");
             }
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteFoto(int id)
+        {
+            try
+            {
+                var sucesso = await _repositoryFoto.DeletarFoto(id);
+                if (!sucesso)
+                {
+                    return NotFound("Foto não encontrada");
+                }
+                return Ok("Foto deletada com sucesso");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro ao deletar foto: {ex.Message}");
+            }
+        }
     }
 }
