@@ -174,3 +174,39 @@ td.empty-row {
 .avaliar-btn:hover {
   background-color: #ff8f00;
 }
+
+.fotos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.foto-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto-thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.delete-foto {
+  margin-top: 5px;
+  font-size: 12px;
+  padding: 3px 6px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-foto:hover {
+  background: #c0392b;
+}

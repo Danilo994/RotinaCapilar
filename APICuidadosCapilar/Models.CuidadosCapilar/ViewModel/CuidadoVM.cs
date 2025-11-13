@@ -16,5 +16,12 @@ namespace Models.CuidadosCapilar.ViewModel
         public int? Nota {  get; set; }
         public string? Observacao { get; set; }
         public DateTime? DataAvaliacao { get; set; }
+        public List<FotoVM>? Fotos { get; set; }
+    }
+
+    public class FotoVM
+    {
+        public int idFoto { get; set; }
+        public string UrlImagem { get; set; }
     }
 }

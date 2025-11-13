@@ -133,6 +133,17 @@ function Cuidados(){
       carregaCuidados();
     }
 
+    const deletarFoto = async (idFoto) => {
+      if(!window.confirm("Deseja excluir esta foto?")) return;
+      try{
+        await api.delete(`/Foto/${idFoto}`);
+        alert("Foto excluida com sucesso!");
+        carregaCuidados();
+      } catch (error) {
+        alert("Erro ao excluir foto: " + (error.response?.data || error.message));
+      }
+    };
+
     return (
       <>
       <Header />
@@ -216,6 +227,22 @@ function Cuidados(){
                     <div className="avaliacao">
                       <p><strong>Nota:</strong> {c.nota}</p>
                       <p className="observacao">"{c.observacao}"</p>
+                      {c.fotos && c.fotos.length > 0 && (
+                        <div className="fotos-container">
+                          {c.fotos.map((foto) => (
+                            <div key={foto.idFoto} className="foto-item">
+                              <img
+                                src={`http://localhost:5278${foto.urlImagem}`}
+                                alt="Foto do cuidado"
+                                className="foto-thumb"
+                              />
+                              <button className="delete-foto" onClick={() => deletarFoto(foto.idFoto)}>
+                                Excluir Foto
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                       <div className="avaliacao-buttons">
                         <button className="edit" onClick={() => abrirModal(c)}>Editar</button>
                         <button className="delete" onClick={() => excluirAvaliacao(c.idCuidado)}>Excluir</button>

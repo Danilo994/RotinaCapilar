@@ -12,9 +12,9 @@ namespace APICuidadosCapilar.Controllers
         RepositoryAvaliacao _repositoryAvaliacao;
         public readonly DBRotinaCapilarContext _context;
 
-        public AvaliacaoController(DBRotinaCapilarContext context)
+        public AvaliacaoController(DBRotinaCapilarContext context, IWebHostEnvironment env)
         {
-            _repositoryAvaliacao = new RepositoryAvaliacao(context);
+            _repositoryAvaliacao = new RepositoryAvaliacao(context, env);
             _context = context;
         }
 
